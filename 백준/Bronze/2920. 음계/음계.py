@@ -1,8 +1,8 @@
 check_list = list(map(int, input().split()))
 
-if check_list == [1, 2, 3, 4, 5, 6, 7, 8]:
+if check_list == sorted(check_list):
     print("ascending")
-elif check_list == [8, 7, 6, 5, 4, 3, 2, 1]:
+elif check_list == sorted(check_list, reverse=True):
     print("descending")
 else:
     print("mixed")
