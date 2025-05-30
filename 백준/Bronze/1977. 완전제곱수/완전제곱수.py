@@ -1,13 +1,13 @@
-N = int(input())
 M = int(input())
+N = int(input())
 
 sqr_list = []
-for num in range(N, M+1):
-    sqr_num = num ** 0.5
-    if sqr_num.is_integer():
-        sqr_list.append(num)
+for i in range(1, 101):
+    sqr_num = i * i
+    if M <= sqr_num <= N:
+        sqr_list.append(sqr_num)
         
-if sqr_list:       
+if sqr_list:
     print(sum(sqr_list))
     print(min(sqr_list))
 else:
