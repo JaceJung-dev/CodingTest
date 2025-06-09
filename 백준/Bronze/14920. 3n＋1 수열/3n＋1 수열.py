@@ -1,15 +1,13 @@
-a = int(input())
+num = int(input())
 
-n = 1
+step = 1
 
-while True:
-    if a == 1:
-        print(n)
-        break
-    
-    n += 1
-    
-    if a % 2 == 0:
-        a /=2
+while num != 1:
+    if num % 2 == 0:
+        num //= 2
     else:
-        a = 3 * a + 1
+        num = 3 * num + 1
+    
+    step += 1
+    
+print(step)
