@@ -24,7 +24,7 @@ def is_tied(num_list):
     
 if num_list[4] != 0:
     print(0)
-elif num_list[4] == 0 and is_related and is_tied(num_list):
+elif num_list[4] == 0 and is_related(num_list) and is_tied(num_list):
     print(8)
 elif num_list[4] == 0 and is_related(num_list):
     print(2)
