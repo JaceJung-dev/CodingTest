@@ -1,28 +1,20 @@
 N = int(input())
 P = int(input())
-final_price = 0
 
+discount_price = [0]
+
+if N >= 5:
+    discount_price.append(500)
+if N >= 10:
+    discount_price.append(int(P * 0.1))
+if N >= 15:
+    discount_price.append(2000)
 if N >= 20:
-    if P * 0.25 > 2000:
-        final_price = P * 0.75
-    else:
-        final_price = P - 2000
-elif N >= 15:
-    if P * 0.1 > 2000:
-        final_price = P * 0.9
-    else:
-        final_price = P - 2000
-elif N >= 10:
-    if P * 0.1 > 500:
-        final_price = P * 0.9
-    else:
-        final_price = P - 500
-elif N >=5:
-    final_price = P - 500
-else:
-    final_price = P
-    
+    discount_price.append(int(P * 0.25))
+
+final_price = P - max(discount_price)
+
 if final_price < 0:
     print(0)
 else:
-    print(int(final_price))
+    print(final_price)
