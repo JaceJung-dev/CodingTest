@@ -1,11 +1,11 @@
-check_list = ["K", "O", "R", "E", "A"]
-final_word = ""
+pattern = "KOREA"
+i = 0
+length = 0
 
 word = input()
-i = 0
 for letter in word:
-    if letter == check_list[i % 5]:
-        final_word += letter
+    if letter == pattern[i]:
+        length += 1
         i = (i + 1) % 5
         
-print(len(final_word))
+print(length)
