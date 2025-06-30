@@ -1,24 +1,27 @@
 N = int(input())
 S = input()
 
-status = 1
+lever = False
 area = 0
+drift = False
 
 for select in S:
     if select == "W":
         area += 1
     elif select == "P":
         if area == 0:
-            status *= -1
+            lever = not lever
         elif area == 1:
-            status *= 0
-
-if area >= 2:
-    if status == 1:
-        print(5)
-    elif status == -1:
-        print(1)
-    elif status == 0:
-        print(6)
-else:
+            drift = True
+            
+if area < 2:
     print(0)
+else:
+    if drift:
+        print(6)
+    else:
+        if lever:
+            print(1)
+        else:
+            print(5)
+
