@@ -1,6 +1,6 @@
 def solution(board):
     answer = 0
-    mines = []
+    mines = set()
     n = len(board)
     for i in range(n):
         for j in range(n):
@@ -9,7 +9,6 @@ def solution(board):
                     if 0 <= i2 <= n-1:
                         for j2 in range(j-1, j+2):
                             if 0 <= j2 <= n-1:
-                                mines.append((i2, j2))
-    mines_set = set(mines)
-    answer = n * n - len(mines_set)
+                                mines.add((i2, j2))
+    answer = n * n - len(mines)
     return answer
