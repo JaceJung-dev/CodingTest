@@ -1,20 +1,10 @@
 N = int(input())
-before_bits = input()
-after_bits = input()
+before = input().strip()
+after = input().strip()
 
-is_success = True
 if N % 2 == 0:
-    if before_bits == after_bits:
-        is_success = True
-    else:
-        is_success = False
+    result = before == after
 else:
-    for i in range(len(before_bits)):
-        if before_bits[i] == after_bits[i]:
-            is_success = False
-            break
+    result = all(b1 != b2 for b1, b2 in zip(before, after))
 
-if is_success:
-    print("Deletion succeeded")
-else:
-    print("Deletion failed")
+print("Deletion succeeded" if result else "Deletion failed")
