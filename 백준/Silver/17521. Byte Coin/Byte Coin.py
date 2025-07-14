@@ -1,23 +1,21 @@
 import sys
+
 input = sys.stdin.readline
 
 n, w = map(int, input().split())
 
 prices = []
 for _ in range(n):
-    price = int(input())
-    prices.append(price)
-    
-prev_price = prices[0]
+    prices.append(int(input()))
+
 coin = 0
-for price in prices:
-    if price > prev_price:
-        coin += w // prev_price
-        w %= prev_price
-    elif price < prev_price:
-        w += (coin * prev_price)
+for i in range(n-1):
+    if prices[i] < prices[i + 1]:
+        coin += w // prices[i]
+        w %= prices[i]
+    elif prices[i] > prices[i + 1]:
+        w += (coin * prices[i])
         coin = 0
-    prev_price = price
 
 w += (coin * prices[-1])
 print(w)
