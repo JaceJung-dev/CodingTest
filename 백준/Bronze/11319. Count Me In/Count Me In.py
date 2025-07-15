@@ -7,12 +7,12 @@ S = int(input())
 for _ in range(S):
     count_constants = 0
     count_vowels = 0
-    sentence = input().lower().replace(" ","").strip()
+    sentence = input().lower()
 
     for char in sentence:
         if char in vowels:
             count_vowels += 1
-        else:
+        elif char.isalpha():
             count_constants += 1
             
     print(count_constants, count_vowels)
