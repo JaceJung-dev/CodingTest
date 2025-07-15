@@ -7,10 +7,9 @@ S = int(input())
 for _ in range(S):
     count_constants = 0
     count_vowels = 0
-    sentence = input().lower()
-    sentence_str = "".join(sentence.split())
-    
-    for char in sentence_str:
+    sentence = input().lower().replace(" ","").strip()
+
+    for char in sentence:
         if char in vowels:
             count_vowels += 1
         else:
