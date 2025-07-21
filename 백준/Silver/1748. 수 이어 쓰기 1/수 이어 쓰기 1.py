@@ -1,20 +1,12 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
+N = input().strip()
+length = len(N)
 count = 0
-start = 1
-digit = 1
 
-while True:
-    end = start * 10 - 1
-    
-    if N <= end:
-        count += (N - start + 1) * digit
-        break
-    
-    count += (end - start + 1) * digit
-    digit += 1
-    start *= 10
-    
+for i in range(1,length):
+    count += 9 * (10 ** (i - 1)) * i
+count += (int(N) - 10 ** (length - 1) + 1) * length
+
 print(count)
