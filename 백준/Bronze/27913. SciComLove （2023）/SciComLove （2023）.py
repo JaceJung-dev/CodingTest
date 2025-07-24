@@ -1,14 +1,12 @@
+import sys
+input = sys.stdin.readline
+
 N, Q = map(int, input().split())
 
 std_word = "SciComLove"
-word = ""
-count = 0
 word = [std_word[i % 10] for i in range(N)]
 
-for char in word:
-    if char.isupper():
-        count += 1
-
+count = sum(1 for char in word if char.isupper())
 
 for _ in range(Q):
     i = int(input())
