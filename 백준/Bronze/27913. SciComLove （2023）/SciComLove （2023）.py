@@ -10,12 +10,14 @@ for char in word:
         count += 1
 
 
-for j in range(Q):
-    if word[j].isupper():
-        word[j] = word[j].lower()
+for _ in range(Q):
+    i = int(input())
+    idx = i - 1
+    if word[idx].isupper():
+        word[idx] = word[idx].lower()
         count -= 1
     else:
-        word[j] = word[j].upper()
+        word[idx] = word[idx].upper()
         count += 1
     
     print(count)
