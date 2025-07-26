@@ -3,6 +3,7 @@ input = sys.stdin.readline
 
 pin = input().strip()
 pattern = input().strip()
+
 index = 0
 new_pin = ""
 
@@ -16,9 +17,9 @@ for char in pattern:
         index += temp      
 
 answer = 0
+
 if len(pin) == index:
-    for n in new_pin:
-        answer += int(n)
+    answer = sum(int(n) for n in new_pin)
     print(answer)
 else:
     print("non sequitur")
