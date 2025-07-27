@@ -1,17 +1,19 @@
 import sys
 input = sys.stdin.readline
 
-word = input().strip()
+word = input().rstrip()
+i = 0
 
-while True:
-    if word.startswith("pi") or word.startswith("ka"):
-        word = word[2:]
-    elif word.startswith("chu"):
-        word = word[3:]
+while i < len(word):
+    if word.startswith("pi", i):
+        i += 2
+    elif word.startswith("ka", i):
+        i += 2
+    elif word.startswith("chu", i):
+        i += 3
     else:
+        print("NO")
         break
-        
-if word:
-    print("NO")
 else:
     print("YES")
+        
