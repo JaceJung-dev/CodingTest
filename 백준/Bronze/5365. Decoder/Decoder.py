@@ -3,17 +3,15 @@ input = sys.stdin.readline
 
 n = int(input())
 coded_msg = input().rstrip().split()
-
-prev_word = " "
+prev = 1
 decoded_msg = ""
-for word in coded_msg:
-    idx = len(prev_word) - 1
-    try:
-        decoded_msg += word[idx]
-    except IndexError:
-        decoded_msg += " "
-        
-    prev_word = word
+
+for i in range(n):
+    cur = len(coded_msg[i])
+    if cur >= prev:
+        decoded_msg += coded_msg[i][prev - 1]
+    else:
+        decoded_msg += " "      
+    prev = cur
     
 print(decoded_msg)
-    
