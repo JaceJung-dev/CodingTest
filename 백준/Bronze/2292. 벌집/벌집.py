@@ -1,9 +1,6 @@
-N = int(input())
-r = 0
-fin = 1
+import math
 
-while fin < N:
-    r += 1
-    fin += 6 * r
-    
-print(r + 1)
+N = int(input())
+layer = math.ceil((3 + math.sqrt(12 * N - 3)) / 6)
+
+print(layer)
