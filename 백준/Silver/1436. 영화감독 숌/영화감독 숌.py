@@ -2,20 +2,12 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
+i, num = 0, 666
 
-i = 0
-num = 666
-is_done = False
-ans = 0
-while not is_done:
+while True:
     if "666" in str(num):
-        ans = num
         i += 1
-        num += 1
-    else:
-        num += 1
-        
-    if i == N:
-        is_done = True
-        
-print(ans)
+        if i == N:
+            print(num)
+            break
+    num += 1
