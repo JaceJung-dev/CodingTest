@@ -1,12 +1,9 @@
 import sys
 input = sys.stdin.readline
-
 a = int(input())
 b = int(input())
-
-length = 1
-while b >= 0:
-    length += 1
+l = 2
+while a - b >= 0:
     a, b = b, a - b
-    
-print(length)
+    l += 1
+print(l)
