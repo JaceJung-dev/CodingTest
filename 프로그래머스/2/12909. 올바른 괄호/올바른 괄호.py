@@ -1,19 +1,13 @@
 def solution(s):
-    answer = True
-    
-    opened, closed = 0, 0
+    st = list()
     
     for char in s:
         if char == "(":
-            opened += 1
+            st.append(char)
         else:
-            closed += 1
-    
-        if opened < closed:
-            answer = False
-            break
-    
-    if opened != closed:
-        answer = False
-        
-    return answer
+            try:
+                st.pop()
+            except IndexError:
+                return False
+            
+    return len(st) == 0
