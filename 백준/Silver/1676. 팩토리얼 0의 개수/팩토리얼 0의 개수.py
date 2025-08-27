@@ -1,12 +1,8 @@
-import sys
-input = sys.stdin.readline
-
 N = int(input())
-
 count = 0
-for num in range(1, N + 1):
-    while num % 5 == 0:
-        count += 1
-        num = num // 5
-        
+
+while N > 1:
+    count += N // 5
+    N //= 5
+    
 print(count)
