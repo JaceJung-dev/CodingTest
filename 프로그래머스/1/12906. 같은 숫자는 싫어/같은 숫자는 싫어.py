@@ -1,8 +1,8 @@
 def solution(arr):
     answer = []
-    prev = -1
+
     for num in arr:
-        if num != prev:
-            answer.append(num)
-            prev = num
+        if answer[-1:] == [num]:
+            continue
+        answer.append(num)
     return answer
