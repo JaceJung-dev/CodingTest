@@ -3,7 +3,7 @@ from collections import deque
 def solution(priorities, location):
     # (우선순위, 위치) 형태의 queue / FIFO
     queue = deque([(priority, index) for index, priority in enumerate(priorities)])
-    
+    print(deque(list(enumerate(priorities))))
     answer = 0
     
     while queue:
