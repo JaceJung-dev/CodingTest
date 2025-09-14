@@ -2,27 +2,28 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-convert = {"1/4": 1, "1/2": 2, "3/4": 3}
-friends = [convert[input().strip()] for _ in range(N)]
+q, h, t = 0, 0, 0
+for _ in range(N):
+    s = input().strip()
+    if s == "1/4":
+        q += 1
+    elif s == "1/2":
+        h += 1
+    else:
+        t += 1
+        
+pizzas = 0
 
-friends.sort(reverse=True)
-selected = [False] * N
-count = 0
+pizzas += t
+q -= min(t, q)
 
-for i in range(N):
-    if selected[i]:
-        continue
-
-    count += 1
-    selected[i] = True
-    total = friends[i]
+pizzas += h // 2
+if h % 2:
+    pizzas += 1
+    q = max(0, q - 2)
     
-    for j in range(i + 1, N):
-        if not selected[j] and total + friends[j] <= 4:
-            total += friends[j]
-            selected[j] = True       
-            if total == 4:
-                break
-            
-print(count)
-     
+pizzas += q // 4
+if q % 4:
+    pizzas += 1
+    
+print(pizzas)
