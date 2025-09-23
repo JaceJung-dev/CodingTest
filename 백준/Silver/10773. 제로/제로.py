@@ -1,5 +1,7 @@
 import sys
 
+input = sys.stdin.readline
+
 K = int(input())
 account = []
 for _ in range(K):
