@@ -22,6 +22,16 @@
 
 ## Records
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=jacejung)](https://solved.ac/jacejung/)
+<div align="center">
+  <a href="https://solved.ac/jacejung/">
+    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=jacejung" />
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <img src="http://mazandi.herokuapp.com/api?handle=jacejung&theme=dark" />
+</div>
 
-![mazandi profile](http://mazandi.herokuapp.com/api?handle=jacejung&theme=dark)
+
+
+
+
+
