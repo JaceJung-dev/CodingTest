@@ -1,4 +1,4 @@
-# Algorithm Repository
+# 🧩 Algorithm Repository
 
 - 백준 온라인 저지(Baekjoon Online Judge), 프로그래머스(Programmers) 문제 풀이 기록 레포지토리입니다. 
 - 기본적으로 [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub) 을 통해 자동 커밋 및 푸시가 이루어지며, 추가적인 해설이나 리펙터링 등 별도의 기록이 필요한 경우 수동으로 커밋합니다.
@@ -20,7 +20,7 @@
 └── README.md              # 리드미
 ```
 
-## Records
+## 🏆 Records
 
 <div align="center">
   <a href="https://solved.ac/jacejung/">
