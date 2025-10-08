@@ -1,11 +1,13 @@
 def solution(participant, completion):
-    answer = ''
+    marathon = {}
+    hash_sum = 0
     
-    participant.sort()
-    completion.sort()
-    
-    for i in range(len(completion)):
-        if participant[i] != completion[i]:
-            return participant[i]
+    for person in participant:
+        marathon[hash(person)] = person
+        hash_sum += hash(person)
         
-    return participant[-1]
+    for person in completion:
+        hash_sum -= hash(person)
+        
+    answer = marathon[hash_sum]
+    return answer
