@@ -3,35 +3,41 @@ from collections import deque
 
 input = sys.stdin.readline
 
-T = int(input())
+
+def bfs(start_x, start_y, grid, visited):
+    queue = deque([(start_x, start_y)])
+    visited[start_y][start_x] = True
+
+    while queue:
+        x, y = queue.popleft()
+
+        for dx, dy in dirs:
+            new_x, new_y = x + dx, y + dy
+
+            if 0 <= new_x < M and 0 <= new_y < N:
+                if not visited[new_y][new_x] and grid[new_y][new_x] == 1:
+                    queue.append((new_x, new_y))
+                    visited[new_y][new_x] = True
+
+
 dirs = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+T = int(input())
+
 for _ in range(T):
     M, N, K = map(int, input().split())
-    cabbages = [tuple(map(int, input().split())) for _ in range(K)]
+    grid = [[0] * M for _ in range(N)]
 
-    visited = [[False] * N for _ in range(M)]
-    queue = deque()
-    count = 0
+    for _ in range(K):
+        x, y = map(int, input().split())
+        grid[y][x] = 1
 
-    for j in range(M):
-        for i in range(N):
-            if (j, i) in cabbages and not visited[j][i]:
-                queue.append((j, i))
-                visited[j][i] = True
+    visited = [[False] * M for _ in range(N)]
 
-                while queue:
-                    y, x = queue.popleft()
+    worms = 0
+    for j in range(N):
+        for i in range(M):
+            if grid[j][i] == 1 and not visited[j][i]:
+                bfs(i, j, grid, visited)
+                worms += 1
 
-                    for dy, dx in dirs:
-                        new_y, new_x = y + dy, x + dx
-
-                        if (new_y < 0 or new_y > M - 1) or (new_x < 0 or new_x > N - 1):
-                            continue
-
-                        if (new_y, new_x) in cabbages and not visited[new_y][new_x]:
-                            queue.append((new_y, new_x))
-                            visited[new_y][new_x] = True
-
-                count += 1
-
-    print(count)
+    print(worms)
